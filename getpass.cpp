@@ -62,7 +62,7 @@ Data parse_line(const std::string& line){
 std::vector<Data> parse_file(){
     std::vector<Data> passwords;
     std::string line;
-     std::fstream file(FILE_PATH, std::ios::in);
+    std::fstream file(FILE_PATH, std::ios::in);
     while(!file.eof()){
         std::getline(file, line);
         passwords.emplace_back(parse_line(line));
@@ -101,6 +101,7 @@ int main(int argc, char** argv){
             bool running = true, clear = false;
             do{
                 if(clear){
+                    clear = false;
                     system("cls");
                     show_options();
                 }
